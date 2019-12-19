@@ -5,16 +5,12 @@ import com.alibaba.excel.annotation.write.style.ColumnWidth;
 import com.alibaba.excel.annotation.write.style.ContentRowHeight;
 import com.alibaba.excel.metadata.BaseRowModel;
 
+
 /**
- * Created with IntelliJ IDEA
- *
- * @Author yuanhaoyue swithaoy@gmail.com
- * @Description 导出 Excel 时使用的映射实体类，Excel 模型
- * @Date 2018-06-06
- * @Time 17:03
+ * @author XieShaoping
  */
-@ContentRowHeight(100)
-@ColumnWidth(100)
+@ContentRowHeight(100)//高度
+@ColumnWidth(100)  //宽度
 public class ExportInfo extends BaseRowModel {
     @ExcelProperty(value = "姓名" ,index = 0)
     private String name;

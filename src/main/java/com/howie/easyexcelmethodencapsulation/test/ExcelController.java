@@ -8,7 +8,6 @@ import com.alibaba.excel.write.style.HorizontalCellStyleStrategy;
 import com.howie.easyexcelmethodencapsulation.demo.entity.DemoData;
 import com.howie.easyexcelmethodencapsulation.excel.ExcelUtil;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
-import org.apache.poi.ss.util.CellUtil;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -19,13 +18,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+
 /**
- * Created with IntelliJ IDEA
- *
- * @Author yuanhaoyue swithaoy@gmail.com
- * @Description
- * @Date 2018-06-05
- * @Time 16:56
+ * @author XieShaoping
  */
 @RestController
 public class ExcelController {

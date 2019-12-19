@@ -6,7 +6,7 @@ import com.alibaba.excel.metadata.BaseRowModel;
 /**
  * @author XieShaoping
  * @date 2019/11/21
- * @description
+ * @description 复杂表头Excel
  */
 public class MultiLineHeadExcelModel extends BaseRowModel {
 

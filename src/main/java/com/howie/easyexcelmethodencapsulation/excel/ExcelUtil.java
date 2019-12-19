@@ -154,6 +154,14 @@ public class ExcelUtil {
         return null;
     }
 
+    /**
+     * @author XieShaoping
+     * @description
+     * @date 2019/12/19
+     * @param fileName 文件名
+     * @param response 响应
+     * @param head 实体类
+     */
     public static ExcelWriter write(String fileName,HttpServletResponse response, Class head) throws IOException {
         fileName = URLEncoder.encode(fileName, "UTF-8");//防止乱码
         response.setContentType("application/vnd.ms-excel");
