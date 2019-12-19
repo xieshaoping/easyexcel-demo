@@ -1,9 +1,9 @@
-# easyexcel-encapsulation
+# easyexcel-demo
 easyexcel 项目地址 ：https://github.com/alibaba/easyexcel
-
+官方文档地址 ：https://alibaba-easyexcel.github.io/
 #### 对 easyexcel 进行了方法的封装，可以做到一个函数完成简单的读取和导出
 
-#### 目前 easyexcel 版本已经更新至 1.1.2-beta4
+#### 目前(2019年12月) easyexcel 版本已经更新至 2.1.4
 
 ---
 
