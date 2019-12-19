@@ -166,4 +166,37 @@ public class ExcelController {
         // 千万别忘记finish 会帮忙关闭流
         excelWriter.finish();
     }
+
+
+    /**
+     * 导出 Excel,多个 sheet,多个对象,如果写到不同的sheet 同一个对象
+     */
+    @GetMapping("testMoreByMoreVo")
+    public void testMoreByMoreVo(HttpServletResponse response) throws IOException {
+        //头部单元样式
+        WriteCellStyle headWriteCellStyle = new WriteCellStyle();
+        //内容单元样式
+        WriteCellStyle contentWriteCellStyle = new WriteCellStyle();
+        //内容居中
+        contentWriteCellStyle.setHorizontalAlignment(HorizontalAlignment.CENTER);
+        //水平单元格样式策略
+        HorizontalCellStyleStrategy horizontalCellStyleStrategy =
+                new HorizontalCellStyleStrategy(headWriteCellStyle, contentWriteCellStyle);
+        String fileName = "test" + System.currentTimeMillis() + ".xlsx";
+        // 这里 需要指定写用哪个class去写
+        ExcelWriter excelWriter = ExcelUtil.write(fileName, response);
+        // 去调用写入,这里我调用了五次，实际使用时根据数据库分页的总的页数来。这里最终会写到5个sheet里面
+        for (int i = 0; i < 5; i++) {
+            // 每次都要创建writeSheet 这里注意必须指定sheetNo,sheetName不能重复
+            WriteSheet writeSheet = EasyExcel.writerSheet(i, "模板" + i)
+                    .registerWriteHandler(horizontalCellStyleStrategy)
+                    .head(DemoData.class)//设置指定实体类
+                    .build();
+            // 分页去数据库查询数据 这里可以去数据库查询每一页的数据
+            List<DemoData> data = getNewList();
+            excelWriter.write(data, writeSheet);
+        }
+        // 千万别忘记finish 会帮忙关闭流
+        excelWriter.finish();
+    }
 }

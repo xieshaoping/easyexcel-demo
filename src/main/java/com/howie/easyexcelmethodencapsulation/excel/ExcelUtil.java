@@ -156,7 +156,7 @@ public class ExcelUtil {
 
     /**
      * @author XieShaoping
-     * @description
+     * @description 指定head实体类
      * @date 2019/12/19
      * @param fileName 文件名
      * @param response 响应
@@ -168,5 +168,20 @@ public class ExcelUtil {
         response.setCharacterEncoding("utf-8");
         response.setHeader("Content-disposition", "attachment;filename=" + fileName + ".xlsx");
         return EasyExcel.write(response.getOutputStream(), head).autoCloseStream(true).build();
+    }
+
+    /**
+     * @author XieShaoping
+     * @description 不指定head实体类
+     * @date 2019/12/19
+     * @param fileName 文件名
+     * @param response 响应
+     */
+    public static ExcelWriter write(String fileName,HttpServletResponse response) throws IOException {
+        fileName = URLEncoder.encode(fileName, "UTF-8");//防止乱码
+        response.setContentType("application/vnd.ms-excel");
+        response.setCharacterEncoding("utf-8");
+        response.setHeader("Content-disposition", "attachment;filename=" + fileName + ".xlsx");
+        return EasyExcel.write(response.getOutputStream()).autoCloseStream(true).build();
     }
 }

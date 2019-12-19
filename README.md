@@ -2,6 +2,16 @@
 easyexcel 项目地址 ：https://github.com/alibaba/easyexcel
 
 官方文档地址 ：https://alibaba-easyexcel.github.io/
+
+##使用方法：
+克隆项目: ```git clone https://github.com/xieshaoping/easyexcel-demo```
+
+浏览器浏览运行：http://localhost:8080/testMoreByMoreVo
+
+或其他接口，
+具体查看ExcelController.java类
+
+
 #### 对 easyexcel 进行了方法的封装，可以做到一个函数完成简单的读取和导出
 
 #### 目前(2019年12月) easyexcel 版本已经更新至 2.1.4
@@ -209,5 +219,9 @@ public void writeExcelWithSheets(HttpServletResponse response) throws IOExceptio
 }
 ```
 write 方法的参数为当前 sheet 的 list 数据，当前 sheet 名以及对应的映射类
-### 3.使用
+### 3.导出的拥有多个 sheet的Excel 
+项目启动后，直接访问http://localhost:8080/testMoreByOneVo和
+http://localhost:8080/testMoreByMoreVo
+
+前者是同一个对象；后者多个对象，一个sheet一个对象
 

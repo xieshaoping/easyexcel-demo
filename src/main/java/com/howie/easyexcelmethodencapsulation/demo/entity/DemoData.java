@@ -2,6 +2,9 @@ package com.howie.easyexcelmethodencapsulation.demo.entity;
 
 import com.alibaba.excel.annotation.ExcelIgnore;
 import com.alibaba.excel.annotation.ExcelProperty;
+import com.alibaba.excel.annotation.write.style.ColumnWidth;
+import com.alibaba.excel.annotation.write.style.ContentRowHeight;
+import com.alibaba.excel.annotation.write.style.HeadRowHeight;
 import lombok.Data;
 
 import java.util.Date;
@@ -11,6 +14,9 @@ import java.util.Date;
  * @date 2019/12/18
  * @description 实体类
  */
+@ContentRowHeight(100)//内容行高
+@ColumnWidth(100 / 8) //表头宽度
+@HeadRowHeight(20)    //表头导读
 public class DemoData {
     @ExcelProperty("字符串标题")
     private String string;
