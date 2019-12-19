@@ -5,13 +5,8 @@ import com.alibaba.excel.ExcelReader;
 import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.metadata.BaseRowModel;
 import com.alibaba.excel.metadata.Sheet;
-import com.alibaba.excel.metadata.TableStyle;
 import com.alibaba.excel.support.ExcelTypeEnum;
-import com.alibaba.excel.write.builder.ExcelWriterBuilder;
 import com.alibaba.excel.write.metadata.style.WriteCellStyle;
-import com.alibaba.excel.write.metadata.style.WriteFont;
-import com.howie.easyexcelmethodencapsulation.demo.entity.DemoData;
-import org.apache.poi.ss.formula.functions.T;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,12 +16,7 @@ import java.net.URLEncoder;
 import java.util.List;
 
 /**
- * Created with IntelliJ IDEA
- *
- * @Author yuanhaoyue swithaoy@gmail.com
- * @Description 工具类
- * @Date 2018-06-06
- * @Time 14:07
+ * @author XieShaoping
  */
 public class ExcelUtil {
     /**

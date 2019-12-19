@@ -7,13 +7,9 @@ import com.alibaba.excel.event.AnalysisEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
- * Created with IntelliJ IDEA
- *
- * @Author yuanhaoyue swithaoy@gmail.com
- * @Description 监听类，可以自定义
- * @Date 2018-06-05
- * @Time 16:58
+ * @author XieShaoping
  */
 public class ExcelListener extends AnalysisEventListener {
 
