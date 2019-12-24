@@ -14,9 +14,9 @@ import java.util.Date;
  * @date 2019/12/18
  * @description 实体类
  */
-@ContentRowHeight(100)//内容行高
+//@ContentRowHeight(100)//内容行高
 @ColumnWidth(100 / 8) //表头宽度
-@HeadRowHeight(20)    //表头导读
+//@HeadRowHeight(20)    //表头高度
 public class DemoData {
     @ExcelProperty("字符串标题")
     private String string;

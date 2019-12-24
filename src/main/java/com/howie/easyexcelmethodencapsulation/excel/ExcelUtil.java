@@ -13,6 +13,8 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -163,11 +165,16 @@ public class ExcelUtil {
      * @param head 实体类
      */
     public static ExcelWriter write(String fileName,HttpServletResponse response, Class head) throws IOException {
-        fileName = URLEncoder.encode(fileName, "UTF-8");//防止乱码
+        Date date = new Date();
+        String strDateFormat = "yyyyMMddHHmmss";
+        SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
+        fileName = URLEncoder.encode(fileName+"-"+sdf.format(date), "UTF-8");//防止乱码
         response.setContentType("application/vnd.ms-excel");
         response.setCharacterEncoding("utf-8");
         response.setHeader("Content-disposition", "attachment;filename=" + fileName + ".xlsx");
-        return EasyExcel.write(response.getOutputStream(), head).autoCloseStream(true).build();
+        return EasyExcel.write(response.getOutputStream(), head)
+                .autoCloseStream(true) //自动关闭流
+                .build();  //构建
     }
 
     /**
@@ -178,7 +185,10 @@ public class ExcelUtil {
      * @param response 响应
      */
     public static ExcelWriter write(String fileName,HttpServletResponse response) throws IOException {
-        fileName = URLEncoder.encode(fileName, "UTF-8");//防止乱码
+        Date date = new Date();
+        String strDateFormat = "yyyyMMddHHmmss";
+        SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
+        fileName = URLEncoder.encode(fileName+"-"+sdf.format(date), "UTF-8");//防止乱码
         response.setContentType("application/vnd.ms-excel");
         response.setCharacterEncoding("utf-8");
         response.setHeader("Content-disposition", "attachment;filename=" + fileName + ".xlsx");
